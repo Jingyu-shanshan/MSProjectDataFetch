@@ -44,6 +44,11 @@ namespace fetchMppFileData
             this.my_table = table;
         }
 
+        public MPPFileProcess(string fileName)
+        {
+            this.my_fileName = fileName;
+        }
+
         /*.mpp file to Datatable
          */
         public string Load_MS_Project()
@@ -142,7 +147,6 @@ namespace fetchMppFileData
             Project project = null;
             //return value
             string result = "";
-            ArrayList tasks = new ArrayList();
 
             try
             {
@@ -205,7 +209,7 @@ namespace fetchMppFileData
 
         /*Datatable to Excel
          */
-        public void Export_Ctr_Excel(DataTable table, string excelFilename)
+        public void Export_DB_Excel(DataTable table, string excelFilename)
         {
             // Here is main process
             Excel.Application objexcelapp = new Excel.Application();
